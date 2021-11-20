@@ -8,6 +8,7 @@ export interface EmbedSource {
 
 export * from "./twitter";
 export * from "./youtube";
+export * from "./twitch";
 export * from "./instagram";
 export * from "./flat_io";
 export * from "./noteflight";

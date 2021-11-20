@@ -1,6 +1,7 @@
 export interface PluginSettings {
   replaceTwitterLinks: boolean;
   replaceYouTubeLinks: boolean;
+  replaceTwitchLinks: boolean;
   replaceInstagramLinks: boolean;
   replaceFlatIOLinks: boolean;
   replaceNoteflightLinks: boolean;
@@ -15,6 +16,7 @@ export interface PluginSettings {
 export const DEFAULT_SETTINGS: PluginSettings = {
   replaceTwitterLinks: true,
   replaceYouTubeLinks: true,
+  replaceTwitchLinks: true,
   replaceInstagramLinks: true,
   replaceFlatIOLinks: true,
   replaceNoteflightLinks: true,

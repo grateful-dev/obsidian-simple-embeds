@@ -5,6 +5,7 @@ import {
   NoteflightEmbed,
   TwitterEmbed,
   YouTubeEmbed,
+  TwitchEmbed,
 } from "embeds";
 import {
   App,
@@ -22,6 +23,7 @@ export default class SimpleEmbedsPlugin extends Plugin {
   embedSources: EmbedSource[] = [
     new TwitterEmbed(this),
     new YouTubeEmbed(),
+    new TwitchEmbed(),
     new InstagramEmbed(),
     new FlatIOEmbed(),
     new NoteflightEmbed(),
@@ -173,6 +175,14 @@ class SimpleEmbedPluginSettingTab extends PluginSettingTab {
         .setValue(this.plugin.settings.replaceYouTubeLinks)
         .onChange(async (value) => {
           this.plugin.settings.replaceYouTubeLinks = value;
+          await this.plugin.saveSettings();
+        });
+    });
+    new Setting(containerEl).setName("Twitch").addToggle((toggle) => {
+      toggle
+        .setValue(this.plugin.settings.replaceTwitcuLinks)
+        .onChange(async (value) => {
+          this.plugin.settings.replaceTwitchLinks = value;
           await this.plugin.saveSettings();
         });
     });
